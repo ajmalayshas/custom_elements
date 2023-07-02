@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        .root {
+            /* text-align: center; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .btn {
+            /* background-color: ; */
+            position: relative;
+            text-align: center;
+            width: 70px;
+            /* height: 20px; */
+            border: .1rem solid green;
+            padding: 5px;
+            color: green;
+            /* background-blend-mode: screen; */
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .txt {
+            color: green;
+            mix-blend-mode: color-dodge;
+        }
+
+
+        .slide {
+            background: linear-gradient(green, green);
+            position: absolute;
+            transition: all 2s;
+            height: 100px;
+            border-radius: 50%;
+            width: 100px;
+            z-index: -1;
+            top: -100px;
+            left: 50px;
+
+        }
+        .btn.active .slide {
+            top:-40px;
+            left: -10px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="root">
+        <div id="btn1" onclick="handleActive('btn1')" class="btn">
+            <div class="slide"> </div>
+            <div class="txt">Click</div>
+
+        </div>
+
+        <script>
+            const handleActive = (id) => {
+                document.getElementById(id).classList.toggle("active")
+            }
+        </script>
+    </div>
+</body>
+
+</html>
